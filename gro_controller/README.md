@@ -29,6 +29,12 @@ For gro file of gromacs
 ### GroAtom.change_atom_num(num)
     num: int
     change atom number of atom to num
+### GroAtom.change_res_name(name)
+    name: str
+    change residue name of atom to "name"
+### GroAtom.change_atom_name(name)
+    name: str
+    change atom name of atom to "name"
 ### GroAtom.get_str_gro_format()
     return atom parameters with gro format(str)
     gro_format = '{res_num:>5d}{res_name:<5s}{atom_name:>5s}{atom_num:>5d}' \
@@ -51,7 +57,11 @@ GroRes is class for handling residue. This is collection of GroAtom.
 ### GroRes.num_of_atoms()
     return number of atoms in residue(int)
 ### GroRes.change_res_nums(num) 
+    num: int
     change residue number of atoms in residue to num
+### GroRes.change_res_names(name)
+    name: str
+    change residue name of atoms in residue to name
 ### GroRes.change_atom_nums(num_i)
     change atom numbers
     set num_i(int) as the first number
@@ -91,3 +101,9 @@ parse gro file and read parameters
 ### Gro.add_residues(residue_ojb_list)
     residue_ojb_list: list of GroRes obj(list)
     add resdidues
+### Gro.res_nums()
+    return list of residue numbers
+### change_res_name(name, residue_nums)
+    name: str
+    residue_nums: list of residue numbers(int)
+    change the name of residue matching the residue number to "name" 
